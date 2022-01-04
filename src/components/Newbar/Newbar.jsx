@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import "./newbar.css"
-import { KeyboardArrowRight, KeyboardArrowLeft, PowerSettingsNew, ChevronLeftTwoTone } from '@material-ui/icons'
+import { KeyboardArrowRight, KeyboardArrowLeft, PowerSettingsNew} from '@material-ui/icons'
 const Newbar = () => {
     const [startDate,setStartDate] = useState(null);
         function handleChange(e) {
@@ -12,7 +12,7 @@ const Newbar = () => {
             var newEndDate = startDate.substring(0,startDate.lastIndexOf('-')+1)+(parseInt(startDate.substring(startDate.lastIndexOf('-')+1,startDate.length))+7).toString();
             setEndDate(newEndDate);
         }
-       })
+       },[startDate])
 
         
     return (
